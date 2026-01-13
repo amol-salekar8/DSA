@@ -26,6 +26,7 @@ public class LevelOrderTraversal {
         root.right = new TreeNode(3);
         root.left.left = new TreeNode(4);
         root.left.right = new TreeNode(5);
+        root.right.left = new TreeNode(6);
         
         List<List<Integer>> responseList = new ArrayList<>();
         levelOrderByTUF(root, responseList);
@@ -34,10 +35,16 @@ public class LevelOrderTraversal {
         
 	}
 
-	public static void levelOrderByTUF(TreeNode root, List<List<Integer>> dataList) {
+	public static void levelOrderByNarsimaRao(TreeNode root, List<List<Integer>> dataList) {
+        if(root == null) return;
+		
 		Queue<TreeNode> queue = new LinkedList();
 		List<Integer> levelList = new ArrayList();
+		
 		queue.offer(root);
+		/**
+		 *  using null we got that we are going to start next level
+		 * */
 		queue.offer(null);
 		while(!queue.isEmpty()) {
 			TreeNode curr = queue.poll();
@@ -53,4 +60,29 @@ public class LevelOrderTraversal {
 			}
 		}
 	}
+	
+	public static void  levelOrderByTUF(TreeNode root,List<List<Integer>> responseList) {
+        if(root == null) return;
+        // create a queue to store node for level order
+        Queue<TreeNode> queue = new LinkedList();
+        queue.add(root);
+       
+        while(!queue.isEmpty()){
+            // get the size of current level
+            int size = queue.size();
+            List<Integer> levelList = new ArrayList();
+
+            for(int i =0; i< size;i++) {
+                // get the current node 
+                TreeNode node = queue.poll();
+                levelList.add(node.data);
+                // get the child node
+                if(node.left != null)
+                    queue.add(node.left);
+                if(node.right != null)
+                    queue.add(node.right);
+            }
+            responseList.add(levelList);
+        }
+    }
 }
