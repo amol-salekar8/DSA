@@ -18,12 +18,12 @@ import com.dsa.tree.BinaryTree.utility.TreeNode;
  * 
  * Approaches
  * 1 ) Queue based approach (Level order )
- * 2)
+ * 2) Recursive approach
  * 
- * https://takeuforward.org/plus/dsa/problems/maximum-depth-in-bt?category=binary-trees&subcategory=medium-problems
+  https://takeuforward.org/plus/dsa/problems/maximum-depth-in-bt?category=binary-trees&subcategory=medium-problems
  */
 
-public class MaximumDeptInBT {
+public class Maximum_Depth_Or_Height_BT {
 	public static void main(String[] args) {
 		TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
@@ -34,13 +34,13 @@ public class MaximumDeptInBT {
         root.right.left.right = new TreeNode(7);
         
         List<List<Integer>> responseList = new ArrayList<>();
-        System.out.println(recursiveALgorithm(root));
+        System.out.println(recursive_algorithm(root));
 	}
 
 	/**
 	 * By iterative approach using level order algorithm
 	 * */
-	public static int levelOrderByNarsimaRao(TreeNode root) {
+	public static int levelOrderBy_NarsimaRao(TreeNode root) {
         if(root == null) return 0;
 		
 		Queue<TreeNode> queue = new LinkedList();
@@ -64,16 +64,36 @@ public class MaximumDeptInBT {
 		return depth++;
 	}
 	
+	
+	public static int iterative_tuf(TreeNode root) {
+		if(root == null) return 0;
+		
+		Queue<TreeNode> queue = new LinkedList();
+		queue.add(root);
+		int count = 0;
+		
+		while(!queue.isEmpty()) {
+			for(int i=0; i < queue.size(); i++) {
+				TreeNode node = queue.poll();
+				if(node.left != null) queue.offer(node);
+				if(node.right != null) queue.offer(node.right);
+			}
+			count++;
+		}
+		return count;
+	}
+	
+	
 	/***
 	 * by recursive algorithm
 	 * use full for small level of tree
 	 */
 	
-	public static int recursiveALgorithm(TreeNode node) {
+	public static int recursive_algorithm(TreeNode node) {
 		if(node == null) return 0;
 		// Divide the with two part 	
-		int left = recursiveALgorithm(node.left);
-		int right = recursiveALgorithm(node.right);
+		int left = recursive_algorithm(node.left);
+		int right = recursive_algorithm(node.right);
 		// The depth of the tree is 1 current node + the maximum depth of the subtrees
 		return 1 + Math.max(left, right);
 	}
