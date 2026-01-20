@@ -58,7 +58,7 @@ public class CheckTwoTreeIdentical {
         node1Stack.push(node1);
         node1Stack.push(node2);
 
-        while( !node1Stack.isEmpty() || !node1Stack.isEmpty() ){
+        while( !node1Stack.isEmpty() || !node2Stack.isEmpty() ){
             TreeNode pTreeNode = node1Stack.pop();
             TreeNode qTreeNode = node1Stack.pop();
             // check for both node
