@@ -77,21 +77,18 @@ public class DiameterOfTree {
 	public static int height_of_bt_optimal(TreeNode root, int [] diameter) {
 		if(root == null) return 0;
 		
-		int [] leftHeight = new int[1];
-		int [] rightHeight = new int[1];
-		
 		/** -- get the height of sub tree -- */
-		leftHeight[0] = height_of_bt_optimal(root.left, diameter);
-		rightHeight[0] = height_of_bt_optimal(root.right, diameter);
+		int leftHeight= height_of_bt_optimal(root.left, diameter);
+		int rightHeight = height_of_bt_optimal(root.right, diameter);
 		
 		/** --  add both sub tree height -- */
-		int currentDia = leftHeight[0] + rightHeight[0];
+		int currentDia = leftHeight + rightHeight;
 		
 		/** --  check with previous diameter -- */
 		diameter[0] = Math.max(diameter[0], currentDia);
 		
 		/** --  return max height -- */
-		return 1 + Math.max(leftHeight[0], rightHeight[0]);
+		return 1 + Math.max(leftHeight, rightHeight);
 	}
 	
 	
