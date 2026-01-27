@@ -51,6 +51,7 @@ public class DiameterOfTree {
 		int leftDiameter = diameterOfBinaryTreeBruteForce(root.left);
 		int rightDiameter = diameterOfBinaryTreeBruteForce(root.right);
 		
+		/* ---  Compare with current node diameter with there child node  --- */
 		return Math.max(currentDiameter, Math.max(leftDiameter, rightDiameter));
 		
 	}

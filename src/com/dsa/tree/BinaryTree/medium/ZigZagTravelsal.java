@@ -10,7 +10,7 @@ import java.util.Stack;
 import com.dsa.tree.BinaryTree.utility.TreeNode;
 
 /**
- * 
+ *  Desc : Traversing happen on z direction i.e from left to right then right to left
  * 
  * 
  */
