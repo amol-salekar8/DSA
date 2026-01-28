@@ -11,6 +11,16 @@ import com.dsa.tree.BinaryTree.utility.TreeNode;
  * -> leaf node  ( Perform Pre-Order traversal )
  * -> right boundary excluding leaf in reverse order
  * 
+ *  * 			1			--> root   -- level 0
+ * 			/		\
+ * 			2		 3  -- siblings		-- level 1
+ * 		/		\		\
+ * 		4 		5	    -9				-- level 2
+ * 	/		\	\
+ * 7		8	10
+ * 
+ * [ 1-> 2-> 7-> 8-> 10-> 9-> 3]
+ * 
  * 
  */
 public class BoundryTravelsal {
