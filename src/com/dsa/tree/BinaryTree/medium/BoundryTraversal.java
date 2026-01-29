@@ -19,19 +19,21 @@ import com.dsa.tree.BinaryTree.utility.TreeNode;
  * 	/		\	\
  * 7		8	10
  * 
- * [ 1-> 2-> 7-> 8-> 10-> 9-> 3]
+ * [ 1-> 2-> 4-> 7-> 8-> 10-> 9-> 3]
  * 
  * 
  */
-public class BoundryTravelsal {
+public class BoundryTraversal {
 	public static void main(String[] args) {
 		TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(3);
-        root.left.left = new TreeNode(4);
-        root.left.right = new TreeNode(5);
-        root.right.left = new TreeNode(6);
-        root.right.right = new TreeNode(7);
+		root.left = new TreeNode(2);
+		root.right = new TreeNode(3);
+		root.left.left = new TreeNode(4);
+		root.left.right = new TreeNode(5);
+		root.right.right = new TreeNode(-9);
+		root.left.left.left = new TreeNode(7);
+		root.left.left.right = new TreeNode(8);
+		root.left.right.right = new TreeNode(10);
         
         List<Integer> resultList = new ArrayList();
         if(!isLeaf(root)) resultList.add(root.data);
