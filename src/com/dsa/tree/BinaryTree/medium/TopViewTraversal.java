@@ -6,12 +6,20 @@ import java.util.List;
 import java.util.Queue;
 import java.util.TreeMap;
 
-import com.dsa.tree.BinaryTree.medium.VerticalTraversal.Tuple;
 import com.dsa.tree.BinaryTree.utility.TreeNode;
 
 /*** TOP VIEW TRAVERSAL 
  * If we look the tree from top position then its will see us 
  * from left most position -> right most position
+ * 
+ * -> Created Pair class who store vertical index and TreeNode
+ * -> Create a queue who store class information to perform BFS 
+ * -> we use concept of vertical line ( vertical index)
+ * -> root at vertical 0 index 
+ * -> 			root
+ * -> 	-1	/			\ +1
+ * ->	leftSide		rightSide
+ * -> Store only unique vertical index into map against verticalIndex -> l node
  *
  * 
  *  			1			--> root   -- level 0
@@ -28,13 +36,13 @@ import com.dsa.tree.BinaryTree.utility.TreeNode;
  */
 public class TopViewTraversal {
 	
-	static class Tuple{
+	static class Pair{
 		TreeNode node;
-		int topViewindex;
-		public Tuple(TreeNode node, int topViewindex) {
+		int verticalIndex;
+		public Pair(TreeNode node, int topViewindex) {
 			super();
 			this.node = node;
-			this.topViewindex = topViewindex;
+			this.verticalIndex = topViewindex;
 		}
 	}
 	
@@ -55,17 +63,17 @@ public class TopViewTraversal {
 	public static List<Integer> topViewBTTraveresal(TreeNode root){
 		List<Integer> resultList = new ArrayList();
 		TreeMap<Integer,Integer> topViewMap = new TreeMap();
-		Queue<Tuple> queue = new LinkedList();
-		queue.add(new Tuple(root,0));
+		Queue<Pair> queue = new LinkedList();
+		queue.add(new Pair(root,0));
 		
 		while(!queue.isEmpty()) {
-			Tuple currTuple = queue.poll();
-			TreeNode currNode = currTuple.node;
-			int topViewIndex = currTuple.topViewindex;
+			Pair currPair = queue.poll();
+			TreeNode currNode = currPair.node;
+			int topViewIndex = currPair.verticalIndex;
 			topViewMap.putIfAbsent(topViewIndex, currNode.data);
 			
-			if(currNode.left != null) queue.offer(new Tuple(currNode.left, topViewIndex-1));
-			if(currNode.right != null) queue.offer(new Tuple(currNode.right, topViewIndex+1));
+			if(currNode.left != null) queue.offer(new Pair(currNode.left, topViewIndex-1));
+			if(currNode.right != null) queue.offer(new Pair(currNode.right, topViewIndex+1));
 		}
 		
 		for(Integer data : topViewMap.values()) {
