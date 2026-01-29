@@ -10,7 +10,8 @@ import com.dsa.tree.BinaryTree.utility.TreeNode;
 
 /*** TOP VIEW TRAVERSAL 
  * If we look the tree from top position then its will see us 
- * from left most position -> right most position
+ * from left most outer position -> right most outer position
+ * and its shadow other tree node that present in between.
  * 
  * -> Created Pair class who store vertical index and TreeNode
  * -> Create a queue who store class information to perform BFS 
@@ -19,7 +20,7 @@ import com.dsa.tree.BinaryTree.utility.TreeNode;
  * -> 			root
  * -> 	-1	/			\ +1
  * ->	leftSide		rightSide
- * -> Store only unique vertical index into map against verticalIndex -> l node
+ * -> Store only first vertical index  value into map 
  *
  * 
  *  			1			--> root   -- level 0
@@ -60,6 +61,10 @@ public class TopViewTraversal {
 	}
 	
 
+	/**
+	 *  We use TreeMap because of its key sorting nature
+	 * 
+	 */
 	public static List<Integer> topViewBTTraveresal(TreeNode root){
 		List<Integer> resultList = new ArrayList();
 		TreeMap<Integer,Integer> topViewMap = new TreeMap();
@@ -70,6 +75,7 @@ public class TopViewTraversal {
 			Pair currPair = queue.poll();
 			TreeNode currNode = currPair.node;
 			int topViewIndex = currPair.verticalIndex;
+			/** -- Store only  first value-- */
 			topViewMap.putIfAbsent(topViewIndex, currNode.data);
 			
 			if(currNode.left != null) queue.offer(new Pair(currNode.left, topViewIndex-1));
