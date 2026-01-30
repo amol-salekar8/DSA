@@ -9,7 +9,7 @@ import java.util.TreeMap;
 
 import com.dsa.tree.BinaryTree.utility.TreeNode;
 
-/*** Left VIEW  
+/*** ---------- LEFT VIEW OF BINARY TREE  -----------
  * 
  * If we look the tree from Left position then its will see us 
  * from Left outer position and remaining part of right tree that doesn't come to shadow

@@ -11,4 +11,11 @@ public class TreeNode {
         left = null;
         right = null;
     }
+
+	@Override
+	public String toString() {
+		return "TreeNode [data=" + data + "]";
+	}
+    
+    
 }
