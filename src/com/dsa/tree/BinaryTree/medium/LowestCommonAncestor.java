@@ -16,8 +16,9 @@ import com.sun.source.tree.Tree;
 	 	 1)-> check for both the finding node on both the side one by one  ( Concept max height )
 	 	 2)-> check for finding node is present or not hasNode()
  *2)-> [Better Approach] Storing Paths of Nodes from Root - O(n) Time and O(n) Space
-	 	->
-	  	-> 
+	 	-> Finding the path of node from root to finding node p and q in two separate array
+	  	-> and iterate over that array until we didn't found mismatch element 
+	  	-> if mismatch element found on both the the array then return previous one
  *3) -> [Optimal approach] -> [Recursive] -> O(N)
   		-> Base condition root == null || p == root || q == root 
 		-> process to left and right part of tree
@@ -31,7 +32,7 @@ import com.sun.source.tree.Tree;
  * 							\
  * 							10
  * 
- * OUTPUT => [ 1-> 2-> -4-> 10]
+ * OUTPUT => [ 1] p=5 , q=10 
  * 
  * TC : O(N) 
  */
