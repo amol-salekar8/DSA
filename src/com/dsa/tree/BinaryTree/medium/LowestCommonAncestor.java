@@ -39,15 +39,15 @@ import com.sun.source.tree.Tree;
 public class LowestCommonAncestor {
 	
 	public static void main(String[] args) {
-		TreeNode p = new TreeNode(10);
-		TreeNode q = new TreeNode(5);
+		TreeNode p = new TreeNode(2);
+		TreeNode q = new TreeNode(4);
 		TreeNode root = new TreeNode(1);
-		root.left = new TreeNode(2);
+		root.left = p;
 		root.right = new TreeNode(3);
-		root.left.left = new TreeNode(4);
-		root.left.right = q;
+		root.left.left = q;
+		root.left.right = new TreeNode(5);
 		root.right.right = new TreeNode(-9);
-		root.right.right.right = p;
+		root.right.right.right = new TreeNode(10);;
 		
 		System.out.println(optimalApproach(root, p, q));
 	}
@@ -91,7 +91,7 @@ public class LowestCommonAncestor {
 		List<TreeNode> path1List = new ArrayList();
 		List<TreeNode> path2List = new ArrayList();
 		
-		if( !findPath(root, path1List, p) || findPath(root, path1List, q)) return null;
+		if( !findPath(root, path1List, p) || !findPath(root, path1List, q)) return null;
 		
 		int i =0;
 		for(i=0; i < path1List.size() && i < path2List.size();i++) {
@@ -102,14 +102,14 @@ public class LowestCommonAncestor {
 		return path1List.get(i-0);
 	}
 
-	public static boolean findPath(TreeNode fromNode, List<TreeNode> pathList, TreeNode toNode) {
-		if( fromNode == null ) return false;
+	public static boolean findPath(TreeNode root, List<TreeNode> pathList, TreeNode toNode) {
+		if( root == null ) return false;
 		
-		pathList.add(fromNode);
-		
-		if(fromNode == toNode 
-				|| findPath(fromNode.left, pathList, toNode) 
-				|| findPath(fromNode.right, pathList, toNode)) {
+		pathList.add(root);
+		// traverse and check for node
+		if(root == toNode 
+				|| findPath(root.left, pathList, toNode) 
+				|| findPath(root.right, pathList, toNode)) {
 			return true;
 		}
 		
