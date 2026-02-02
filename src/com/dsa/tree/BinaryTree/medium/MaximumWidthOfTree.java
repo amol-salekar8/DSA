@@ -8,6 +8,11 @@ import java.util.Queue;
 import com.dsa.tree.BinaryTree.utility.TreeNode;
 
 /** --- Maximum Width of Binary tree ---
+ * 
+ * Approaches 
+ * 1) Queue + Pair [ Iterative ]
+ * 2) DLR + List  [ Recursion ]
+ * 
  * length between left outer most and right outer most 
  * If there null value in between still we have to count that 
  * Suppose we have full binary tree then how many count it will lies in between that nodes
@@ -57,10 +62,11 @@ public class MaximumWidthOfTree {
 		root.left.right = new TreeNode(5);
 		root.right.right = new TreeNode(-9);
 		root.right.right.right = new TreeNode(10);
-		System.out.println(maximumWidth(root));
+		System.out.println(widthOfBinaryTree(root));
 		
 	}
 	
+	/** -- With Iterative -- */
 	public static int maximumWidth(TreeNode root) {
 		Queue<Pair<TreeNode,Integer>> queue = new LinkedList<>();
 		int maxWidth = 0;
@@ -91,7 +97,7 @@ public class MaximumWidthOfTree {
 		return maxWidth;
 	}
 	
-	/** -- Without pair class -- */
+	/** -- With Recursion-- */
 	private static int maxWidth = Integer.MIN_VALUE;
  	private static List<Integer>leftIndexList = new ArrayList<>();
  	
