@@ -10,7 +10,7 @@ import com.dsa.tree.BinaryTree.utility.TreeNode;
 /** --- Maximum Width of Binary tree ---
  * 
  * Approaches 
- * 1) Queue + Pair [ Iterative ]
+ * 1) Level order + Pair [ Iterative ]
  * 2) DLR + List  [ Recursion ]
  * 
  * length between left outer most and right outer most 
