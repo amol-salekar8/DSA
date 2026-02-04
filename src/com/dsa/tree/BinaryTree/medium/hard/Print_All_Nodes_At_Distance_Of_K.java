@@ -19,6 +19,11 @@ import com.dsa.tree.BinaryTree.utility.TreeNode;
  * 
  * Q Why we used Map ? ==>  Get backtrack mean search for ancestor 
  * 
+ * FOR THIS WE HAVE TO TRAVERSE 3 WAY
+ * 1) LEFT
+ * 2) CHILD
+ * 3) PARENT
+ * 
  * Approaches 
  * 1) Recursive ( List, Map )
  * 			 - DFS to store parent map ( we store root parent as null )
