@@ -49,6 +49,7 @@ public class Print_All_Nodes_At_Distance_Of_K {
 		System.out.println(getKthNodeFromTargetNode(root, targetNode, kthPositon));
 	}
 
+	/** Recursive Approach */
 	public static List<Integer> findingNodeAtDistanceK(TreeNode root, TreeNode targetNode, int kthPositon) {
 		buildParentMap(root, null);
 		findNodesAtDistanceK(targetNode, null, kthPositon);
@@ -87,18 +88,6 @@ public class Print_All_Nodes_At_Distance_Of_K {
 			}
 		}
 	}
-
-	// Helper function to create a binary tree from a list
-	public static TreeNode createTree(List<Integer> nodes, int index) {
-		if (index < nodes.size() && nodes.get(index) != null) {
-			TreeNode root = new TreeNode(nodes.get(index));
-			root.left = createTree(nodes, 2 * index + 1);
-			root.right = createTree(nodes, 2 * index + 2);
-			return root;
-		}
-		return null;
-	}
-
 	
 	/** Iterative Approach
 	 * 1) Child -> parent map
@@ -160,6 +149,18 @@ public class Print_All_Nodes_At_Distance_Of_K {
 		}
 		
 		return kthPostionList;
+	}
+	
+
+	// Helper function to create a binary tree from a list
+	public static TreeNode createTree(List<Integer> nodes, int index) {
+		if (index < nodes.size() && nodes.get(index) != null) {
+			TreeNode root = new TreeNode(nodes.get(index));
+			root.left = createTree(nodes, 2 * index + 1);
+			root.right = createTree(nodes, 2 * index + 2);
+			return root;
+		}
+		return null;
 	}
 	
 }
