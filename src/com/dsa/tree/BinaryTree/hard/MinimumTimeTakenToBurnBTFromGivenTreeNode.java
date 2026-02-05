@@ -38,6 +38,7 @@ import com.dsa.tree.BinaryTree.utility.TreeNode;
       7   4
    
  * Input : root = [3, 5, 1, 6, 2, N, 8, N, N, 7,4] , target = 5, 
+ * Output : 3
  */
 public class MinimumTimeTakenToBurnBTFromGivenTreeNode {
 	
