@@ -10,13 +10,14 @@ import com.dsa.tree.BinaryTree.utility.TreeNode;
  * Its a concept of In-Order but without using stack and recursion
  * 
  * Cases 1: Assign root node to current node
- * Case 2 : check current node is null or not if its not null  then go for the further process
+ * Case 2 : check current node is null or not if its not null  then go for next step
  * Case 3 : check for currentNode -> left is null or not
- *  	3.1 : if its null then process the currentNode then assign currentNode -> right to  currentNode 
+ *  	3.1 : if its null then process the currentNode and  assign currentNode -> right to  currentNode 
  *  	3.2 : if its not null the assign currentNodes -> left to prevNode
- *  	3.3 : got till prevNode-> right is not null and prevNode-> right is not equal to currentNode
- *  	3.4 : if prevNode -> right  becomes null then assign currentNode to prevNode-> right [ Transforming into chain ]
- * 		3.5 : otherwise
+ *  	3.3 : got till prevNode -> right is not null and prevNode-> right is not equal to currentNode
+ *  	3.4 : UPTO  prevNode -> right  becomes null till assign currentNode to prevNode-> right [ Transforming into chain ]
+ * 		3.5 : if prevNode -> right become null then assign prevNode -> right to current node
+ * 		3.6 : otherwise prevNode -> right is current node then change prevNode -> right to null -> process curr node -> currentNode -> right 
  * 
  * 
  * 
