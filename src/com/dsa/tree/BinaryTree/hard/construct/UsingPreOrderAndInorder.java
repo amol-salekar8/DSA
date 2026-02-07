@@ -6,7 +6,7 @@ import com.dsa.tree.BinaryTree.utility.TreeNode;
 
 /**
  * -- Constructing a tree with the help of In-Order Array and Pre-Order array
- * Logic is 
+ * 
  * PreOrder start is our root node as per traversing order 
  * Find that element in InOder array => to find that we store InOrder array's element to Map with index position
  * from that element index  position in InOrder array  ( Left Data Right ) before part is belong to left side and after side part belong to right side
@@ -34,7 +34,7 @@ public class UsingPreOrderAndInorder {
 		
 		return buildTree(inorder, 0, inorder.length-1, preorder, 0, preorder.length-1, inorderPostionMap);
 	}
-	
+
 	public static TreeNode buildTree(int[] inorder, int inStart, int inEnd, int[] preorder,
 			int preStart, int preEnd, HashMap<Integer,Integer> inorderPostionMap) {
 		/** -- Base Condition -- */
