@@ -19,8 +19,6 @@ import com.dsa.tree.BinaryTree.utility.TreeNode;
  * 		3.5 : if prevNode -> right become null then assign prevNode -> right to current node and process curr node
  * 		3.6 : otherwise prevNode -> right is current node then change prevNode -> right to null  -> currentNode -> right 
  * 
- * 
- * 
  * 				1			--> root
  * 			/		\
  * 			2		 3
@@ -36,7 +34,6 @@ import com.dsa.tree.BinaryTree.utility.TreeNode;
  */
 public class MorrisPreOrder {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		 TreeNode root = new TreeNode(1);
 	        root.left = new TreeNode(2);
 	        root.right = new TreeNode(3);
