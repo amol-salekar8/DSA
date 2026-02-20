@@ -1,6 +1,7 @@
 # Binary Tree
 - If each node has zero child, one child or two child
 - Empty tree is also valid binary tree
+
   ![BinaryTreeStructue](./image/BinaryTreeStructue.svg)
 
 #### Types of binary tree
@@ -9,10 +10,12 @@
 2) **Full Binary Tree :** If each node has exactly two children and all leaf node are at same level
     - The number of nodes n in full binary tree is 2<sup>h+1</sup> - 1
     - The number of leaf nodes in full binary tree is 2<sup>h</sup>
+   
       ![FullBinaryTree](./image/FullBinaryTree.svg)
 3) **Complete Binary Tree :** If all node are at hight h or h-1 and also without any missing number in the sequence.
     - The number of nodes n in complete binary tree is between 2<sup>h</sup> (Minimum) and 2<sup>h+1</sup> -1 (Maximum)
-      ![CompleteBinaryTree](./image/CompleteBinaryTree.svg)
+
+  ![CompleteBinaryTree](./image/CompleteBinaryTree.svg)
 
 ### Structure of Binary tree
 **[Binary Tree Structure](./BinaryTree/utility/TreeNode.java)**
