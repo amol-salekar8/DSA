@@ -31,7 +31,7 @@ public class HashTableOperations {
 		return temp;
 	}
 	
-	public static void hashInsert(HashTable table, int data) {
+	/*public static void hashInsert(HashTable table, int data) {
 		int index;
 		ListNode temp, newNode;
 		
@@ -51,6 +51,6 @@ public class HashTableOperations {
 		
 		
 		
-	}
+	}*/
 
 }
