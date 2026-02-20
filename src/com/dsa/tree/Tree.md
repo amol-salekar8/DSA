@@ -26,3 +26,4 @@
 
 ![Skew Tree](./image/SkewTrees.svg)
 
+## [Binary Tree](BinaryTree.md)
