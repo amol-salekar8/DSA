@@ -23,16 +23,18 @@
 3) Stop when the next pointers point to null
 
 ```java
-import com.dsa.linkedList.utility.SingleListNode;
+import com.dsa.linkedList.singly.SingleListNode;
+
 // Count program
-public int length(SingleListNode headNode){
-    int count =0;
-    SingleListNode currentNode = headNode;
-    while (currentNode != null){
-        count++;
-        currentNode = currentNode.next;
-    }
-    return count;
+
+public int length(SingleListNode headNode) {
+  int count = 0;
+  SingleListNode currentNode = headNode;
+  while (currentNode != null) {
+    count++;
+    currentNode = currentNode.next;
+  }
+  return count;
 }
 
 /**
@@ -52,9 +54,11 @@ public int length(SingleListNode headNode){
 
 **Operation**
 - Update the new node -> current head
+
 ![Singly_insertion_At_Beginning_1](./image/Singly_insertion_At_Beginning_1.svg)
 -  Update the head pointer to point to new node
-   ![Singly_insertion_At_Beginning_2](./image/Singly_insertion_At_Beginning_2.svg)
+
+![Singly_insertion_At_Beginning_2](./image/Singly_insertion_At_Beginning_2.svg)
 
 **2) At the End :**
 - Modify two next pointer
@@ -76,3 +80,57 @@ public int length(SingleListNode headNode){
 
 ![Singly_insertion_At_Middle_1](./image/Singly_insertion_At_Middle_1.svg)
 ![Singly_insertion_At_Middle_2](./image/Singly_insertion_At_Middle_2.svg)
+
+### 3) Deletion
+**Types of deletion**
+1) Deleting First node (Head node)
+2) Deleting last node (Tail node)
+3) Deleting Intermediate (Middle) Node
+
+**1) Deleting First node**
+1) Create a temporary node which will point to same node as that lead.
+
+![Singly_Deletion_At_Beginning_1.svg](./image/Singly_Deletion_At_Beginning_1.svg)
+2) Now move the head pointer to next node and dispose the temporary node
+   
+![Singly_Deletion_At_Beginning_2.svg](./image/Singly_Deletion_At_Beginning_2.svg)
+
+**2) Deleting last node (Tail node)**
+- Tricker than removing first node, because the algorithm should find a node which is previous to tail
+**Step 1 :**
+- Traverse the list and maintain previous node address also
+- When we reach end of the list we have two nodes
+  - previous of tail node
+  - tail node
+
+![Singly_Deletion_At_End_1](./image/Singly_Deletion_At_End_1.svg)
+
+**Step 2 :**
+- Update previous node next pointer to Null
+
+![Singly_Deletion_At_End_2](./image/Singly_Deletion_At_End_2.svg)
+
+**Step 3 :**
+- Dispose of the tail node
+
+![Singly_Deletion_At_End_3](./image/Singly_Deletion_At_End_3.svg)
+
+**2) Deleting Intermediate node (Middle node)**
+- Always located between two node
+
+**Step 1 :** 
+- Maintain location of previous node while traversing to list
+- Once we find the node to be deleted change previous node -> next -> next
+
+![Singly_Deletion_At_Intermidiate_1.svg](./image/Singly_Deletion_At_Intermidiate_1.svg)
+![Singly_Deletion_At_Intermidiate_2.svg](./image/Singly_Deletion_At_Intermidiate_2.svg)
+
+## Deletion of whole Single Linked List
+- This work storing the current node in temporary variable and freezing the current node.
+- After freezing the current node go to the next with temporary variable and repeat this process for all nodes.
+
+
+## [Singly List implementation](../singly/SingleLinkedImplemtation.java)
+
+
+
