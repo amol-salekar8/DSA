@@ -79,41 +79,20 @@ public class SerializeAndDeserialize {
     }
 
     public static TreeNode deserializePreOrder(String data) {
-        if (data == null || data.equals("null")) return null;
-
-        String[] values = data.split(",");
-        int n = values.length;
-
-        TreeNode root = new TreeNode(Integer.parseInt(values[0]));
-        Deque<TreeNode> stack = new ArrayDeque<>();
-        stack.push(root);
-
-        int i = 1;
-
-        while (!stack.isEmpty() && i < n) {
-            TreeNode current = stack.peek();
-
-            // If left child not processed yet
-            if (current.left == null) {
-                if (!values[i].equals("#")) {
-                    TreeNode leftNode = new TreeNode(Integer.parseInt(values[i]));
-                    current.left = leftNode;
-                    stack.push(leftNode);
-                }
-                i++;
-            }
-            // Process right child
-            else {
-                if (!values[i].equals("#")) {
-                    TreeNode rightNode = new TreeNode(Integer.parseInt(values[i]));
-                    current.right = rightNode;
-                    stack.push(rightNode);
-                }
-                stack.pop();  // Done with this node
-                i++;
-            }
-        }
-
-        return root;
+        String[] str = data.split(",");
+        int[] index = new int[1];
+        return  deserializePreRecursion(str,index);
     }
+
+    public static TreeNode deserializePreRecursion(String[] strArray, int[] index){
+        if (strArray[index[0]].equals("#")){
+            index[0]++;
+            return null;
+        }
+        TreeNode node = new TreeNode(Integer.parseInt(strArray[index[0]++]));
+        node.left = deserializePreRecursion(strArray,index);
+        node.right = deserializePreRecursion(strArray,index);
+        return node;
+    }
+
 }
