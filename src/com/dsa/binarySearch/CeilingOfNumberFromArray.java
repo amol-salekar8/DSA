@@ -1,4 +1,4 @@
-package com.dsa.arr.binarySearch;
+package com.dsa.binarySearch;
 
 /**
  * Number should be equal to or greater than target number

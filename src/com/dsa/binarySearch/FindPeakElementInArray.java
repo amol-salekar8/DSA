@@ -1,20 +1,20 @@
-package com.dsa.arr.binarySearch;
+package com.dsa.binarySearch;
 
 
 /***
- * https://leetcode.com/problems/find-in-mountain-array/description/
+ * https://leetcode.com/problems/find-peak-element/
+ * 
  * 
  */
-public class FindinMountainArray {
-	
+public class FindPeakElementInArray {
 	public static void main(String[] args) {
-		int [] mountainArr = {1,2,3,4,5,3,1};
+		int [] mountainArr = {5,1,2};
 		int target = 3;
-		System.out.println(findInMountainArray(target, mountainArr));
+		System.out.println(findInPeakElementArray(target, mountainArr));
 	}
 
 	
-public static int findInMountainArray(int target, int [] mountainArr) {
+public static int findInPeakElementArray(int target, int [] mountainArr) {
         
 	int start =0;
     int end = mountainArr.length -1;
@@ -28,7 +28,4 @@ public static int findInMountainArray(int target, int [] mountainArr) {
 	    }
 	    return start;
     }
-
-
-	
 }

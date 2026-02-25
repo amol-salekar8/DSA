@@ -1,4 +1,4 @@
-package com.dsa.arr.binarySearch;
+package com.dsa.binarySearch;
 
 /**
  * https://leetcode.com/problems/find-smallest-letter-greater-than-target/

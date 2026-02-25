@@ -1,4 +1,4 @@
-package com.dsa.arr.string.interview;
+package com.dsa.string;
 
 public class AddStringsIntegers {
 	

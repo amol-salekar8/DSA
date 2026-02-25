@@ -1,4 +1,4 @@
-package com.dsa.arr.binarySearch;
+package com.dsa.binarySearch;
 
 public class Single_Element_In_Sorted_Array {
 	

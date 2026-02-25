@@ -1,46 +1,31 @@
-package com.dsa.arr.binarySearch;
+package com.dsa.binarySearch;
+
 /***
- * https://leetcode.com/problems/search-in-rotated-sorted-array/description/
- * 
+ * This example is just same as FindInRotate sorted array
+ * the difference is 
+ * FindInRotate we are finding element index
+ * but in this we check the count of rotation
+ */
+
+/**
+ *  Hints : 
+ *  1) Find the Pivot
+ *  	: 1) find in mid > mid +1
+ *  	  2) find in mid < mid -1
+ *  	: 3) check for start is greater than mid to shift the end -> mid -1 for run the loop
+ *  	: 4) check for mid is greater than end to shift the start -> mid + 1 for run the loop
  * 
  */
-public class Search_In_Rotated_Array {
+public class RotationCount {
 	
 	public static void main(String[] args) {
-		int [] nums = {10,12,12,13,13,0,1,2,3,4,5};
+		int[] nums = {10,12,12,13,13,0,1,2,3,4};
+		int pivotIndex = findPivotfromDuplicatesForRotationCount(nums);
+		System.out.println( pivotIndex+1 );
 		
-		System.out.println(search(nums,5));
 	}
 	
-	public static int search(int[] nums, int target) {
-        int peakElementIndex = findPivotForRotationCount(nums);
-        
-        if(peakElementIndex == -1)
-        	return binarySearch(peakElementIndex+1, nums.length-1, nums, target);
-        
-        if(nums[peakElementIndex] == target)
-        	return peakElementIndex;
-        
-        if(target >= nums[0])
-        	return binarySearch(0,peakElementIndex-1, nums, target);
-        
-        return binarySearch(peakElementIndex+1, nums.length-1, nums, target);
-    }   
-
-    public static int binarySearch(int start, int end, int [] nums, int target){
-        while(start <= end){
-            int mid = start +(end-start)/2;
-            if(nums[mid] ==  target)
-                return mid;
-            else if( nums[mid] < target)
-                start = mid+1;
-            else 
-                end = mid-1;
-        }
-        return -1;
-    }
-
-    static int findPivotForRotationCount(int[] nums) {
+	static int findPivotForRotationCount(int[] nums) {
 		int start = 0;
 		int end = nums.length-1;
 		while(start <= end ) {
@@ -53,13 +38,16 @@ public class Search_In_Rotated_Array {
 				end = mid -1;
 			else 
 				start = mid +1;
+			
 		}
 		return -1;
 	}
 	
 	static int findPivotfromDuplicatesForRotationCount(int[] nums) {
+		
 		int start =0;
 		int end = nums.length-1;
+		
 		while(start <= end ) {
 			int mid = start + (end -start)/2;
 			if(end > mid && nums[mid] > nums[mid+1]) // for mid's next index
@@ -80,8 +68,9 @@ public class Search_In_Rotated_Array {
 			else // for end 
 				start = mid +1;
 		}
+		
+		
 		return -1;
 	}
-	
 
 }
