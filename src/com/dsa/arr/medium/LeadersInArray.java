@@ -22,11 +22,14 @@ public class LeadersInArray {
     public static int[] bruteForceApproach(int[] nums){
         List<Integer> list = new ArrayList<>();
         for (int i=0;i< nums.length;i++){
-            int maxElement = nums[i];
+            boolean leader = true;
             for (int j = i+1; j < nums.length; j++) {
-                maxElement = Math.max(maxElement, nums[j]);
+                if(nums[j] >= nums[i]){
+                    leader = false;
+                    break;
+                }
             }
-            if(nums[i] >= maxElement) list.add(nums[i]);
+            if(leader) list.add(nums[i]);
         }
         int leaderArr[] = new int[list.size()];
         int index =0;
