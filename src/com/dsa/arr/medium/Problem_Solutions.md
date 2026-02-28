@@ -14,12 +14,11 @@
 #### Pascal Traingle
 
 ![](./image/PascalTriangle.svg)
-
+![](./image/NumberOfCombinationFormula.svg)
 #### I Q. Given two integers r and c, return the value at the rth row and cth column (1-indexed) in a Pascal's Triangle.
 1) **Approach 1 :** A brute force way to solve this will be to generate the entire Pascal's Triangle up to the given row number and then return the element at the given position.
 2) **Approach 2 :** nCr (number of combinations)
-
-![](./image/NumberOfCombinationFormula.svg)
-
+![](./image/PascalTriangle_I.svg)
 
 #### II Q. Given an integer r, return all the values in the rth row (1-indexed) in Pascal's Triangle in correct order.
+![](./image/PascalTriangle_II.svg)
