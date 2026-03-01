@@ -22,3 +22,8 @@
 
 #### II Q. Given an integer r, return all the values in the rth row (1-indexed) in Pascal's Triangle in correct order.
 ![](./image/PascalTriangle_II.svg)
+
+
+
+#### 90 Degree Rotation Matrix
+![](./image/90DegreeRotationMatrix.svg)
