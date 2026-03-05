@@ -1,33 +1,33 @@
 # Solutions
 
 ### LeaderInArray
-![LeaderInArray](../medium/image/LeaderInArray.svg)
+![LeaderInArray](./image/LeaderInArray.svg)
 
 ### Re-Arrange Array Element by sign
 
-![RearrangeArrayElementsBySign](../medium/image/RearrangeArrayElementsBySign.svg)
+![RearrangeArrayElementsBySign](./image/RearrangeArrayElementsBySign.svg)
 
 ### PrintTheMatrixInSpiralManner
-![PrintTheMatrixInSpiralManner](../medium/image/PrintTheMatrixInSpiralManner.svg)
+![PrintTheMatrixInSpiralManner](./image/PrintTheMatrixInSpiralManner.svg)
 
 
 #### Pascal Traingle
 
-![](../medium/image/PascalTriangle.svg)
-![](../medium/image/NumberOfCombinationFormula.svg)
+![](./image/PascalTriangle.svg)
+![](./image/NumberOfCombinationFormula.svg)
 #### I Q. Given two integers r and c, return the value at the rth row and cth column (1-indexed) in a Pascal's Triangle.
 1) **Approach 1 :** A brute force way to solve this will be to generate the entire Pascal's Triangle up to the given row number and then return the element at the given position.
 2) **Approach 2 :** nCr (number of combinations)
-![](../medium/image/PascalTriangle_I.svg)
+![](./image/PascalTriangle_I.svg)
 
 #### II Q. Given an integer r, return all the values in the rth row (1-indexed) in Pascal's Triangle in correct order.
-![](../medium/image/PascalTriangle_II.svg)
+![](./image/PascalTriangle_II.svg)
 
 #### III Q. Given an integer n, return the first n (1-Indexed) rows of Pascal's triangle.
 
 
 #### 90 Degree Rotation Matrix
-![](../medium/image/90DegreeRotationMatrix.svg)
+![](./image/90DegreeRotationMatrix.svg)
 
 #### Two Sum 
 **Q. Given an array of integers nums and an integer target. Return the indices(0 - indexed) of two elements in nums such that they add up to target.**
