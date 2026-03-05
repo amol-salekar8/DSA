@@ -10,7 +10,7 @@
    - [x] [Circular Linked List]()
 5. [x] [Stack]()
 6. [x] [Queue]()
-7. [ ] [Tree](./src/com/dsa/tree/Tree.md)
+7. [ ] [Tree](src/com/dsa/tree/Theory/Tree.md)
    - [ ] [Binary Tree]()
    - [ ] [Binary Search Tree]()
 8. [ ] [Graph]()
