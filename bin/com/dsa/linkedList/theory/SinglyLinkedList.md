@@ -23,7 +23,7 @@
 3) Stop when the next pointers point to null
 
 ```java
-import com.dsa.linkedList.singly.SingleListNode;
+import com.dsa.linkedList.Problems.singly.SingleListNode;
 
 // Count program
 

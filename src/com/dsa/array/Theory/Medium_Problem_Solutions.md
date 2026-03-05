@@ -29,7 +29,7 @@
 #### 90 Degree Rotation Matrix
 ![](./image/90DegreeRotationMatrix.svg)
 
-#### Two Sum 
+### Two Sum 
 **Q. Given an array of integers nums and an integer target. Return the indices(0 - indexed) of two elements in nums such that they add up to target.**
 ```java
 int[] nums = {2, 6, 5, 8, 11};
@@ -55,7 +55,7 @@ int target = 14;
     - if sum > target reduce right--
     - if sum < target increase left ++
 
-#### 3 Sum
+### 3 Sum
 Q. Given an integer array nums. Return all triplets such that:
 ```
    i != j, i != k, and j != k
@@ -95,5 +95,44 @@ a + b + c = 0
    - if there is duplicate value middle pointer then **j++** 
    - if there is duplicate value last pointer then **k--** 
 
+### Four Sum
+**Q. Given an integer array nums and an integer target. Return all quadruplets [nums[a], nums[b], nums[c], nums[d]] such that:**
+- a, b, c, d are all distinct valid indices of nums. 
+- nums[a] + nums[b] + nums[c] + nums[d] == target.
 
+```
+Example 1
 
+Input: nums = [1, -2, 3, 5, 7, 9], target = 7
+Output: [[-2, 1, 3, 5]]
+Explanation: nums[1] + nums[0] + nums[2] + nums[3] = 7
+
+Example 2
+
+Input: nums = [7, -7, 1, 2, 14, 3], target = 9
+Output: []
+Explanation: No quadruplets are present which add upto 9
+```
+
+**Approach 1 (BruteForce) :** TC(n^4)   
+- Used four loop to find the target and return index on element that after finding that target
+
+**Approach 2 (Better) :** TC(n^3)
+- Reduce search time by one by using hashing concept
+- In brute force approach we are use 4 loop but in this concept we are going to use 3 loops.
+- Before iterating 3rd loop, we declare hashing concept to store and get the fourth value.
+- We sum the three value and subtract that sum  from target to get the fourth value ( concept we use two sum approach)
+- If fourth value available in hashing then we got the sum of quadrants.
+- we are going to use 3rd loop value as hashed.
+
+``` 
+a + b + c + d = target
+ a + b + c  - target = - d 
+d = target - ( a + b + c)
+
+```
+
+**Approach 3 Optimal:** 
+- Reduce search time and space by using two pointer concept.
+- We sort the array for traversing and using two pointer concept.
+- 2 for loop for regular and after that we used concept like two pointer.

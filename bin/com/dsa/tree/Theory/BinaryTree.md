@@ -2,23 +2,23 @@
 - If each node has zero child, one child or two child
 - Empty tree is also valid binary tree
 
-  ![BinaryTreeStructue](./image/BinaryTreeStructue.svg)
+  ![BinaryTreeStructue](../image/BinaryTreeStructue.svg)
 
 #### Types of binary tree
 1) **Strict Binary Tree :** if each node has exactly two children or no children
-   ![StrictBinaryTree](./image/StrictBinaryTree.svg)
+   ![StrictBinaryTree](../image/StrictBinaryTree.svg)
 2) **Full Binary Tree :** If each node has exactly two children and all leaf node are at same level
     - The number of nodes n in full binary tree is 2<sup>h+1</sup> - 1
     - The number of leaf nodes in full binary tree is 2<sup>h</sup>
    
-      ![FullBinaryTree](./image/FullBinaryTree.svg)
+      ![FullBinaryTree](../image/FullBinaryTree.svg)
 3) **Complete Binary Tree :** If all node are at hight h or h-1 and also without any missing number in the sequence.
     - The number of nodes n in complete binary tree is between 2<sup>h</sup> (Minimum) and 2<sup>h+1</sup> -1 (Maximum)
 
-  ![CompleteBinaryTree](./image/CompleteBinaryTree.svg)
+  ![CompleteBinaryTree](../image/CompleteBinaryTree.svg)
 
 ### Structure of Binary tree
-**[Binary Tree Structure](./BinaryTree/utility/TreeNode.java)**
+**[Binary Tree Structure](../BinaryTree/utility/TreeNode.java)**
 
 ### Operation on Binary Trees
 1) **Basic Operations :**
@@ -49,7 +49,7 @@
 - traverse the left subtree in PPRE order
 - traverse the right subtree in PRE order.
 
-**[PRE Order Traversal Implementation](./BinaryTree/algorithm/PreOrderTraversal.java)**
+**[PRE Order Traversal Implementation](../BinaryTree/algorithm/PreOrderTraversal.java)**
 
 
 ### IN order traversal (LDR)
@@ -58,7 +58,7 @@
 - visit the root
 - traverse the right subtree in IN-order.
 
-**[IN Order Traversal Implementation](./BinaryTree/algorithm/InOrderTraversal.java)**
+**[IN Order Traversal Implementation](../BinaryTree/algorithm/InOrderTraversal.java)**
 
 ### IN order traversal (LDR)
 
@@ -66,4 +66,4 @@
 - traverse the right subtree in POST-order.
 - visit the root
 
-**[POST Order Traversal Implementation](./BinaryTree/algorithm/PostOrderTraversal.java)**
+**[POST Order Traversal Implementation](../BinaryTree/algorithm/PostOrderTraversal.java)**

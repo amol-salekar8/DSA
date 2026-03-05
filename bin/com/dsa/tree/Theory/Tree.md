@@ -1,6 +1,6 @@
 # Tree
 
-![](./image/BasicTreeImage.svg)
+![](../image/BasicTreeImage.svg)
 
 ### Fundamental
 1) **Root :** Node with no parent e.g. 1.
@@ -24,6 +24,6 @@
 ## Skew Tree
 - If every node in tree has only one child ( except leaf node ) then we call such tree as skew trees.
 
-![Skew Tree](./image/SkewTrees.svg)
+![Skew Tree](../image/SkewTrees.svg)
 
 ## [Binary Tree](BinaryTree.md)
