@@ -16,3 +16,6 @@ This algorithm **contains 3 pointers** i.e. low, mid, and high, and 3 main rules
 - After swapping that value comes at mid index so we need to validate their postion.
 ### How it works
 ![Dutch_National_flag_iteration](../image/Dutch_National_flag_iteration.svg)
+
+## Related Question
+1) https://leetcode.com/problems/sort-colors/description/
