@@ -118,6 +118,7 @@ Explanation: No quadruplets are present which add upto 9
 - Used four loop to find the target and return index on element that after finding that target
 
 **Approach 2 (Better) :** TC(n^3)
+- Reduce search time by one by using hashing concept
 - In brute force approach we are use 4 loop but in this concept we are going to use 3 loops.
 - Before iterating 3rd loop, we declare hashing concept to store and get the fourth value.
 - We sum the three value and subtract that sum  from target to get the fourth value ( concept we use two sum approach)
@@ -131,5 +132,33 @@ d = target - ( a + b + c)
 
 ```
 
-**Approach 3 :**
+**Approach 3 (Optimal) :** 
+- Reduce search time and space by using two pointer concept.
+- We sort the array for traversing and using two pointer concept.
+- 2 for loop for regular and after that we used concept like two pointer.
+
+
+### Dutch National Flag
+**Q. Given an array nums consisting of only 0, 1, or 2. Sort the array in non-decreasing order.**
+
+```
+Example 1
+
+Input: nums = [1, 0, 2, 1, 0]
+Output: [0, 0, 1, 1, 2]
+Explanation: The nums array in sorted order has 2 zeroes, 2 ones and 1 two
+
+Example 2
+
+Input: nums = [0, 0, 1, 1, 1]
+Output: [0, 0, 1, 1, 1]
+Explanation: The nums array in sorted order has 2 zeroes, 3 ones and zero twos
+
+```
+
+**Approach 1 ( Brute Force Approach ) :**
+- Create 3 Arrays for 0, 1, 2
+- Add the respective value in their respective array i.e. 0 value to 0 based array
+- Add 1st 0 array to result list then 1 and 2.
+
 
