@@ -1,7 +1,8 @@
 # Patterns Overview
 
 ### Reference 
-[DSA was HARD until I Learned these 20 Patterns](https://blog.algomaster.io/p/20-dsa-patterns)  
+- [DSA was HARD until I Learned these 20 Patterns](https://blog.algomaster.io/p/20-dsa-patterns)  
+- [DSA Patterns you need to know !!](https://leetcode.com/discuss/post/5886397/dsa-patterns-you-need-to-know-by-anubhav-x7og/)
 
 ![](images/patterns.png)
 
