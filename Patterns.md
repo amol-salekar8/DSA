@@ -586,8 +586,251 @@ public void bfs(Node start) {
 5. Walls and Gates (LeetCode #286)
 
 ### 15. Shortest Path
+![shortestPath.png](images/shortestPath.png)
+- Shortest path algorithms find the minimum distance between nodes. 
+- Dijkstra’s works for weighted graphs with non-negative weights, while Bellman-Ford handles negative weights.
+
+```java
+// Dijkstra's Algorithm using Priority Queue
+int[] dist = new int[n];
+Arrays.fill(dist, Integer.MAX_VALUE);
+dist[source] = 0;
+
+// PQ: (distance, node)
+PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[0] - b[0]);
+pq.offer(new int[]{0, source});
+
+while (!pq.isEmpty()) {
+    int[] curr = pq.poll();
+    int d = curr[0], node = curr[1];
+
+    if (d > dist[node]) continue; // already processed
+
+    for (int[] edge : graph.get(node)) {
+        int neighbor = edge[0], weight = edge[1];
+        int newDist = dist[node] + weight;
+
+        if (newDist < dist[neighbor]) {
+            dist[neighbor] = newDist;
+            pq.offer(new int[]{newDist, neighbor});
+        }
+    }
+}
+```
+**When to use**
+- Finding minimum cost/distance paths
+-  Network routing problems
+- Weighted graph traversal
+- Problems with varying edge costs
+
+**Practice Problems**
+1. Network Delay Time (LeetCode #743)
+2. Cheapest Flights Within K Stops (LeetCode #787)
+3. Path with Maximum Probability (LeetCode #1514)
+4. Swim in Rising Water (LeetCode #778)
+5. Path with Minimum Effort (LeetCode #1631)
+
 ### 16. Matrix Traversal
+- Matrix traversal uses DFS or BFS to explore 2D grids. 
+- The key is handling 4-directional (or 8-directional) movement and boundary checks.
+
+```java
+// Direction arrays for 4 directions
+int[] dx = {0, 0, 1, -1};
+int[] dy = {1, -1, 0, 0};
+
+// DFS on matrix
+void dfs(int[][] grid, int i, int j, boolean[][] visited) {
+    int m = grid.length, n = grid[0].length;
+
+    // boundary and validity check
+    if (i < 0 || i >= m || j < 0 || j >= n) return;
+    if (visited[i][j] || grid[i][j] == 0) return;
+
+    visited[i][j] = true;
+    // process cell
+
+    // explore 4 directions
+    for (int d = 0; d < 4; d++) {
+        dfs(grid, i + dx[d], j + dy[d], visited);
+    }
+}
+
+// BFS on matrix
+Queue<int[]> queue = new LinkedList<>();
+queue.offer(new int[]{startRow, startCol});
+visited[startRow][startCol] = true;
+
+while (!queue.isEmpty()) {
+    int[] cell = queue.poll();
+    int i = cell[0], j = cell[1];
+
+    for (int d = 0; d < 4; d++) {
+        int ni = i + dx[d], nj = j + dy[d];
+        if (ni >= 0 && ni < m && nj >= 0 && nj < n
+            && !visited[ni][nj] && grid[ni][nj] == 1) {
+            visited[ni][nj] = true;
+            queue.offer(new int[]{ni, nj});
+        }
+    }
+}
+```
+
+**When to use**
+* Grid-based problems (islands, regions)
+* Flood fill algorithms
+* Finding connected components in 2D
+* Path finding in mazes
+
+**Practice Problems**
+1. Number of Islands (LeetCode #200)
+2. Flood Fill (LeetCode #733)
+3. Surrounded Regions (LeetCode #130)
+4. Max Area of Island (LeetCode #695)
+5. Pacific Atlantic Water Flow (LeetCode #417)
+
 ### 17. Backtracking
+![BackTracking.png](images/BackTracking.png)
+- Backtracking explores all possible solutions by making choices, and undoes (backtracks) when a path leads to an invalid solution. It builds solutions incrementally.
+
+```java
+public void backtrack(State state, Choices choices, Results results) {
+    // Base case: Is this a complete solution?
+    if (isComplete(state)) {
+        results.add(copy(state));  // Store the solution
+        return;
+    }
+
+    // Recursive case: Try each available choice
+    for (Choice choice : getAvailableChoices(state, choices)) {
+        // 1. CHOOSE: Make the choice
+        makeChoice(state, choice);
+
+        // 2. EXPLORE: Recursively explore with this choice
+        backtrack(state, choices, results);
+
+        // 3. UNCHOOSE: Undo the choice (backtrack)
+        undoChoice(state, choice);
+    }
+}
+```
+
+**When to use**
+* Generating all permutations/combinations/subsets
+* Solving constraint satisfaction problems (N-Queens, Sudoku)
+* Finding all paths meeting certain criteria
+* String partitioning problems
+
+**Practice Problems**
+1. Subsets (LeetCode #78)
+2. Permutations (LeetCode #46)
+3. Combination Sum (LeetCode #39)
+4. N-Queens (LeetCode #51)
+5. Word Search (LeetCode #79)
+
 ### 18. Prefix Search (Trie)
+![PrefixSearch.png](images/PrefixSearch.png)
+- A Trie (prefix tree) stores strings character by character, allowing efficient prefix lookups. Each node represents a character, and paths from root to nodes represent prefixes.
+
+```java
+class TrieNode {
+    TrieNode[] children = new TrieNode[26];
+    boolean isEndOfWord = false;
+}
+
+class Trie {
+    TrieNode root = new TrieNode();
+
+    void insert(String word) {
+        TrieNode node = root;
+        for (char c : word.toCharArray()) {
+            int idx = c - 'a';
+            if (node.children[idx] == null) {
+                node.children[idx] = new TrieNode();
+            }
+            node = node.children[idx];
+        }
+        node.isEndOfWord = true;
+    }
+
+    boolean search(String word) {
+        TrieNode node = searchPrefix(word);
+        return node != null && node.isEndOfWord;
+    }
+
+    boolean startsWith(String prefix) {
+        return searchPrefix(prefix) != null;
+    }
+
+    private TrieNode searchPrefix(String prefix) {
+        TrieNode node = root;
+        for (char c : prefix.toCharArray()) {
+            int idx = c - 'a';
+            if (node.children[idx] == null) return null;
+            node = node.children[idx];
+        }
+        return node;
+    }
+}
+```
+
+**When to use**
+* Autocomplete and search suggestions
+* Spell checking
+* IP routing (longest prefix match)
+* Word games (finding valid words)
+
+**Practice Problems**
+1. Implement Trie (LeetCode #208)
+2. Word Search II (LeetCode #212)
+3. Design Add and Search Words Data Structure (LeetCode #211)
+4. Replace Words (LeetCode #648)
+5. Longest Word in Dictionary (LeetCode #720)
+
 ### 19. Greedy
+- Greedy algorithms make locally optimal choices at each step, hoping to find a global optimum. 
+- They work when local optimal choices lead to global optimal solutions.
+
+
+**When to use**
+1. Optimization problems with greedy choice property
+2. Interval scheduling
+3. Huffman coding
+4. Activity selection
+5. When proof by exchange argument works
+
+**Practice Problems**
+1. Jump Game (LeetCode #55)
+2. Jump Game II (LeetCode #45)
+3. Gas Station (LeetCode #134)
+4. Task Scheduler (LeetCode #621)
+5. Partition Labels (LeetCode #763)
+
+
 ### 20. Dynamic Programming Patterns
+- Dynamic Programming (DP) solves problems by breaking them into overlapping subproblems and storing results to avoid recomputation.
+- It works when problems have optimal substructure.
+
+[In depth overview](https://blog.algomaster.io/p/20-patterns-to-master-dynamic-programming)
+
+**When to use**
+* Problems with overlapping subproblems
+* Optimization (min/max) problems
+* Counting problems (number of ways)
+* Decision problems (can we achieve X?
+
+**Common DP Patterns**
+* Fibonacci Pattern (1D DP with previous states)
+* 0/1 Knapsack (include or exclude each item)
+* Longest Common Subsequence (2D DP on two sequences)
+* Longest Increasing Subsequence
+
+**Practice Problems**
+
+1. Climbing Stairs (LeetCode #70)
+2. House Robber (LeetCode #198)
+3. Coin Change (LeetCode #322)
+4. Longest Common Subsequence (LeetCode #1143)
+5. Longest Increasing Subsequence (LeetCode #300)
+6. Partition Equal Subset Sum (LeetCode #416)
+7. Edit Distance (LeetCode #72)
