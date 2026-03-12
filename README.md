@@ -15,10 +15,10 @@
 - **Algorithm (Recipe) :** Okay, now I will write the for loop and the if statements to actually move that window.
 
 ### Data Structure
-[Overview of DSA](DataStructure.md)
+[Overview of DSA](Overview/DataStructure.md)
 
 ### Algorithms
-[Overview of Algorithm](Algorithms.md)
+[Overview of Algorithm](Overview/Algorithms.md)
 
 ### Patterns
-[Overview of Patterns](Patterns.md)
+[Overview of Patterns](Overview/Patterns.md)
