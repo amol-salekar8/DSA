@@ -57,3 +57,6 @@ To overcome above problem we  go to Linked List
 1) [Singly Linked List](SinglyLinkedList.md)
 2) [Doubly Linked List](DoublyLinkedList.md)
 3) [Circular Linked List](CircularLinkedList.md)
+4) Memory Efficient Linked List
+5) Unrolled Linked List
+6) Skip List
