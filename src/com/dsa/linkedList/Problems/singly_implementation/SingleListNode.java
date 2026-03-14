@@ -1,4 +1,4 @@
-package com.dsa.linkedList.Problems.singly;
+package com.dsa.linkedList.Problems.singly_implementation;
 
 public class SingleListNode {
 	private int data;

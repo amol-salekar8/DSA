@@ -23,18 +23,18 @@
 3) Stop when the next pointers point to null
 
 ```java
-import com.dsa.linkedList.Problems.singly.SingleListNode;
+import com.dsa.linkedList.Problems.singly_implementation.SingleListNode;
 
 // Count program
 
 public int length(SingleListNode headNode) {
-  int count = 0;
-  SingleListNode currentNode = headNode;
-  while (currentNode != null) {
-    count++;
-    currentNode = currentNode.next;
-  }
-  return count;
+    int count = 0;
+    SingleListNode currentNode = headNode;
+    while (currentNode != null) {
+        count++;
+        currentNode = currentNode.next;
+    }
+    return count;
 }
 
 /**
