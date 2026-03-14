@@ -1,4 +1,4 @@
-package com.dsa.stack.Problem.implementation;
+package com.dsa.stack.Implementation;
 
 import com.dsa.linkedList.Problems.utility.ListNode;
 

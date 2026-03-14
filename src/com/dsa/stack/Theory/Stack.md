@@ -52,7 +52,7 @@
 - If array storing stack elements get full then **push operation should throw an error**.
 - If we try deleting an element from an empty stack it will **throw stack empty error**
 
-[Fixed Array Stack Implementation](../Problem/implementation/Simple_Array_Implementation.java)
+[Fixed Array Stack Implementation](../Implementation/Simple_Array_Implementation.java)
 
 - **Performance** 
   - n => number of elements in the stack
@@ -79,7 +79,7 @@
   - If array is full create a new array with twice the current array size copy all element to new array
   - With this approach pushing n items takes time proportional to n ( not n^2 )
 
-[Dynamic Array Stack Implementation](../Problem/implementation/Dynamic_Array_Implementation.java)
+[Dynamic Array Stack Implementation](../Implementation/Dynamic_Array_Implementation.java)
 
 
 - **Performance :**
@@ -101,7 +101,7 @@
 - Push and Pop operation perform at Beginning ( HEAD ) of list.
 ![Stack_LinkedListImpl](image/Stack_LinkedListImpl.svg)
 
-[Linked List Stack Implementation](../Problem/implementation/Linked_List_Implementation.java)
+[Linked List Stack Implementation](../Implementation/Linked_List_Implementation.java)
 
 
 ### Comparing Array and Linked List implementation

@@ -1,4 +1,4 @@
-package com.dsa.stack.Problem.implementation;
+package com.dsa.stack.Implementation;
 
 public class Dynamic_Array_Implementation {
     // Length of stack

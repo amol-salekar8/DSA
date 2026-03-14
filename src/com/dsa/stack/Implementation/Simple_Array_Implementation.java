@@ -1,4 +1,4 @@
-package com.dsa.stack.Problem.implementation;
+package com.dsa.stack.Implementation;
 
 /** -- Fixed Size Stack -- */
 public class Simple_Array_Implementation {
