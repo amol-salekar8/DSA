@@ -1,7 +1,6 @@
 # Kadane's Algorithm
 
 - Kadane's algorithm is an efficient, greedy/dynamic programming algorithm used to find the maximum sum of a contiguous subarray within a one-dimensional array of numbers.
-- 
 ****
 
 ### Before Kadane's algorithm

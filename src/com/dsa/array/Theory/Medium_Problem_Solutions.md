@@ -161,4 +161,10 @@ Explanation: The nums array in sorted order has 2 zeroes, 3 ones and zero twos
 - Add the respective value in their respective array i.e. 0 value to 0 based array
 - Add 1st 0 array to result list then 1 and 2.
 
+**Approach 2 (Dutch National Flag)**
+- With the help of 2 pointer
 
+
+### Maximum Sum from SubArray  ( Kadane Algorithms )
+
+- [Kadane's Algorithms](Kadanes_Algorithm.md)

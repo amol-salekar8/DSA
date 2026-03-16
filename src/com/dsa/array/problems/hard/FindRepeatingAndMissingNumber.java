@@ -16,7 +16,7 @@ import java.util.Arrays;
 public class FindRepeatingAndMissingNumber {
     public static void main(String[] args) {
         int[] nums = {3, 5, 4, 1, 1};
-        Arrays.stream(betterApproach(nums)).forEach(System.out::println);
+        Arrays.stream(optimalApproach_I(nums)).forEach(System.out::println);
     }
 
     /** Two For Loops **/
@@ -62,8 +62,41 @@ public class FindRepeatingAndMissingNumber {
 
     /** --- With The help of Mathematics equation --- */
     public static int[] optimalApproach_I(int [] nums){
+        int length = nums.length;
+        // Summation n natural number
+        long sN = ( length * ( length +1 ) ) /2;
+        // Summation of square of n natural number
+        long s2N = ( length * ( length +1 )  * ( 2 * length + 1 ) ) /6;
+        long s =0, s2 =0;
 
-        return new int[]{}  ;
+        for(int i=0; i<length; i++){
+            s += nums[i];
+            s2 += (long) nums[i]* (long) nums[i];
+        }
+        // (X - Y ) = S - SN
+        long value1 = s - sN;
+        // ( X^2 - Y^2) = S2 - S2N
+        long value2 = s2 - s2N;
+        /**( X^2 - Y^2) = S2 - S2N
+         * (X - Y ) (X + Y ) = S2 - S2N
+         *  (X + Y ) = S2 - S2N / (X - Y );
+         */
+        value2 = value2/value1;
+        /***
+         *  X - Y  = Value1
+         *  X + Y  = Value2
+         *  2X  = ( Value1 + Value 2)
+         *  X = ( Value1 + Value 2) / 2
+         *
+         */
+        long repeating_x = ( value1 + value2 )/2;
+        /**
+         *  X - Y  = Value1
+         *  - Y = - X + Value1
+         *   Y =  X - Value1
+         */
+        long missing_y = repeating_x - value1;
+        return new int[]{(int)repeating_x, (int) missing_y}  ;
     }
 
 
