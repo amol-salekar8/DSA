@@ -42,3 +42,6 @@ Output: [6, 9]
 ## Count Inversion
 
 ![CountInversion.svg](image/CountInversion.svg)
+
+- [**Question** : Count Inversion](https://takeuforward.org/plus/dsa/problems/count-inversions?subject=dsa&tab=description&approach=optimal)
+- [**Solution** : Count Inversion](../problems/hard/CountingInversion.java)
