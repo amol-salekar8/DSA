@@ -38,3 +38,7 @@ Output: [6, 9]
   - **Optimal Approach I (Mathematical Equations)**
     ![Find_Repeating_Missing_Number_Optiomal_I](image/Find_Repeating_Missing_Number_Optiomal_I.svg)
   - **Optimal Approach II (XOR)**
+
+## Count Inversion
+
+![CountInversion.svg](image/CountInversion.svg)

@@ -49,7 +49,7 @@
 - traverse the left subtree in PPRE order
 - traverse the right subtree in PRE order.
 
-**[PRE Order Traversal Implementation](../BinaryTree/algorithm/PreOrderTraversal.java)**
+**[PRE Order Traversal Implementation](../Problem/BinaryTree/algorithm/PreOrderTraversal.java)**
 
 
 ### IN order traversal (LDR)
@@ -58,7 +58,7 @@
 - visit the root
 - traverse the right subtree in IN-order.
 
-**[IN Order Traversal Implementation](../BinaryTree/algorithm/InOrderTraversal.java)**
+**[IN Order Traversal Implementation](../Problem/BinaryTree/algorithm/InOrderTraversal.java)**
 
 ### IN order traversal (LDR)
 
@@ -66,4 +66,4 @@
 - traverse the right subtree in POST-order.
 - visit the root
 
-**[POST Order Traversal Implementation](../BinaryTree/algorithm/PostOrderTraversal.java)**
+**[POST Order Traversal Implementation](../Problem/BinaryTree/algorithm/PostOrderTraversal.java)**

@@ -35,4 +35,10 @@ Output: [6, 9]
     - [ **INSIDE 1st** ]2nd loop to find selected 1st element  in the remaining array.
   - **Better Approach (HashMap Data structure) (Counting elements)**
     - 1st loop stored element as key and repeating count as value.
-  - **Optimal Approach (Mathematical Equations)**
+  - **Optimal Approach I (Mathematical Equations)**
+    ![Find_Repeating_Missing_Number_Optiomal_I](image/Find_Repeating_Missing_Number_Optiomal_I.svg)
+  - **Optimal Approach II (XOR)**
+
+## Count Inversion
+
+![CountInversion.svg](image/CountInversion.svg)
