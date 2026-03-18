@@ -43,5 +43,10 @@ Output: [6, 9]
 
 ![CountInversion.svg](image/CountInversion.svg)
 
+**Why merge sort**
+- to improve time complexity from O(n^2) -> O(n log n)
+- while sorting the array if **nums[left] > num[right]**  than we count how many element present at left side **( mid - left +1)**
+- why we count that because the remaining element present at left is by default greater than right side. 
+
 - [**Question** : Count Inversion](https://takeuforward.org/plus/dsa/problems/count-inversions?subject=dsa&tab=description&approach=optimal)
 - [**Solution** : Count Inversion](../problems/hard/CountingInversion.java)
