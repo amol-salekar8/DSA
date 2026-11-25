@@ -30,8 +30,6 @@ public class IntersectionOfTwoSortedArray {
         int[] nums2 = {2, 3, 4, 4, 5, 11, 12};
         int[] intersectionArray = intersectionUsingSet(nums1,nums2);
         Arrays.stream(intersectionArray).boxed().forEach(System.out::println);
-
-
     }
 
     /** -- We use Stream API for this */
@@ -73,9 +71,5 @@ public class IntersectionOfTwoSortedArray {
         }
         return unionArray;
     }
-
-
-
-
 
 }
