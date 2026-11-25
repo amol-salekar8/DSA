@@ -12,7 +12,7 @@ import java.util.List;
  * 2) Separate the 0's , 1's and 2's then merge
  * 3) Dutch national flag
  */
-public class Sort_0s_1s_2s {
+public class Sort0s1s2s {
     public static void main(String[] args) {
         int [] nums = {1, 0, 2, 1, 0};
         dutchNationalFlag(nums);
